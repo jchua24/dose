@@ -1,0 +1,30 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <Label text="Settings"></Label>
+    </ActionBar>
+
+    <GridLayout class="settings_container">
+        <Repeater items="{{ listItems }}">
+            <Repeater.itemsLayout>
+                <StackLayout orientation="vertical" />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <StackLayout>
+                    <GridLayout columns="15*, *" rows="auto" tap="onItemTap" class="template-item"> 
+                        <Label col="0" row="0" text="{{ title }}" class="title"/>
+                        <Label col="1" row="0" text="&#xf054;" class="fas title arrow_style" visibility="{{ arrow }}" />
+                    </GridLayout>
+                    <!-- <Label height="1" backgroundColor="lightgray"/> --> 
+                </StackLayout> 
+            </Repeater.itemTemplate>
+        </Repeater>
+    </GridLayout>
+</Page>
+
+
+
+<?xml-stylesheet type="text/css" href="settings-page.scss"?> 
+   

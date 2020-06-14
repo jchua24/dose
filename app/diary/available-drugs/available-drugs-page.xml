@@ -1,0 +1,19 @@
+<Page navigatingTo="onNavigatingTo"  xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:datetime="nativescript-datetimepicker">
+
+    <ActionBar>
+        <Label text="Diary"></Label>
+    </ActionBar>
+
+    <GridLayout class="page_container" columns="*" rows="auto, * ">
+        <Label class="heading-text" col="0" row="0" text="Available Drugs"> </Label> 
+
+        <ListView col="0" row="1" items="{{ drugList }}" itemTap="onItemTap">
+            <ListView.itemTemplate> 
+                <StackLayout >
+                    <Label class="drugItem" text="{{ drugName }}" textWrap="true" /> 
+                 </StackLayout> 
+            </ListView.itemTemplate> 
+        </ListView> 
+    </GridLayout>
+
+</Page>

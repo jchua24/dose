@@ -1,0 +1,64 @@
+<Page navigatingTo="onNavigatingTo"  xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:Card="nativescript-cardview">
+
+    <ActionBar>
+
+        <Label text="{{ greetingText }}"></Label>
+        
+        <ActionBar.actionItems> 
+            <ActionItem android.systemIcon="ic_menu_preferences" android.position="actionBar" ios.position="right" tap="onSettingsButtonTap">
+                <ActionItem.actionView>
+                    <Label text="&#xf013;" class="nt-icon fas" />
+                </ActionItem.actionView>
+            </ActionItem>
+        </ActionBar.actionItems> 
+    </ActionBar>
+
+    <GridLayout class="page_container side-margin" columns="*,*" rows="*,*,*">
+        <Card:CardView row="0" col="0" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout class="" rows="auto" pageName="diary" tap="onTileTapped">
+                <Image class="btn-img" row="0" src="res://diary" height="100%"></Image>
+                <Label class="tileText" row="0" text="Diary" textWrap="true" horizontalAlignment="center"/> 
+            </GridLayout>
+        </Card:CardView>
+
+        <Card:CardView row="0" col="1" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout rows="auto" pageName="calendar" tap="onTileTapped">
+                <Image class="btn-img" row="0" src="res://calendar" height="100%"></Image>
+                <Label class="tileText" row="0" text="Calendar" textWrap="true" horizontalAlignment="center"/>
+            </GridLayout>
+        </Card:CardView>
+
+        <Card:CardView row="1" col="0" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout rows="auto" pageName="learn" tap="onTileTapped">
+                <Image class="btn-img"  row="0" src="res://learn" height="100%"></Image>
+                <Label class="tileText" row="0" text="Learn" textWrap="true" horizontalAlignment="center"/>
+            </GridLayout>
+        </Card:CardView>
+
+        <Card:CardView row="1" col="1" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout rows="auto" pageName="reminders" tap="onTileTapped">
+                <Image class="btn-img"  row="0" src="res://reminders" height="100%"></Image>
+                <Label class="tileText" row="0" text="Reminders" textWrap="true" horizontalAlignment="center"/>
+            </GridLayout>
+        </Card:CardView>
+
+        <Card:CardView row="2" col="0" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout rows="auto" pageName="reports" tap="onTileTapped">
+                <Image class="btn-img"  row="0" src="res://reports" height="100%"></Image>
+                <Label class="tileText" row="0" text="Reports" textWrap="true" horizontalAlignment="center"/>
+            </GridLayout>
+        </Card:CardView>
+
+        <Card:CardView row="2" col="1" class="cardStyle" elevation="0" shadowOffsetHeight="3" shadowOffsetWidth="3">
+            <GridLayout rows="auto" pageName="scan" tap="onTileTapped">
+                <Image class="btn-img"  row="0" src="res://scan" height="100%"></Image>
+                <Label class="tileText" row="0" text="Scan" textWrap="true" horizontalAlignment="center"/>
+            </GridLayout>
+        </Card:CardView>
+
+
+       
+
+    </GridLayout>
+    
+</Page>

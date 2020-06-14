@@ -1,0 +1,82 @@
+
+.bg1 {
+    background-color: pink;
+}
+
+.page {
+    align-items: center;
+    flex-direction: column;
+    background-color: #2bbb9c;
+
+    .sign-up-label {
+        margin-bottom: 20; 
+    }
+}
+
+.form {
+    margin-left: 30;
+    margin-right: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+
+    .small-text {
+        horizontal-align: center;
+        color: WHITE; 
+        margin-top: 5; 
+    }
+
+    .header {
+        horizontal-align: center;
+        font-size: 28;
+        //font-weight: 150;
+        margin-bottom: 70;
+        text-align: center;
+        color: white; 
+    }
+}
+  
+.logo {
+    margin-bottom: 12;
+    height: 20%; 
+    font-weight: bold;
+}
+
+
+  
+.page .input-field {
+    margin-bottom: 25;
+}
+
+.input-field {
+    //background-color: white
+}
+
+.actionButton {
+    text-align: center; 
+    border-color: #176D5B;
+    background-color: #176D5B; 
+    border-radius: 8;
+    border-width: 1;
+    color: white;
+    margin: 5; 
+}
+
+.input-field .input {
+    font-size: 18;
+    placeholder-color: slategray;
+    color: white; 
+}
+  
+.input:disabled {
+    background-color: white;
+    opacity: 0.5;
+}
+  
+.btn-primary {
+    margin: 30 5 15 5;
+}
+
+.bold {
+    color: white; 
+}
+  

@@ -1,0 +1,43 @@
+<BottomNavigation loaded="onLoaded">
+    <TabStrip visibility="{{ loginNeeded ? 'collapse' : 'visible' }}">
+        <TabStripItem class="navigation__item">
+            <Label text="Home" />
+            <Image src="font://&#xf015;" class="fas" />
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Diary" />
+            <Image src="font://&#xf02d;" class="fas" />
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Calendar" />
+            <Image src="font://&#xf073;" class="fas" />
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Learn" />
+            <Image src="font://&#xf518;" class="fas" />
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Reminders" />
+            <Image src="font://&#xf0f3;" class="fas" />
+        </TabStripItem>
+    </TabStrip>
+
+    <TabContentItem>
+        <Frame id="firstPage" defaultPage="{{ firstPage }}" /> 
+    </TabContentItem>
+
+    <TabContentItem>
+        <Frame id="diaryPage"  defaultPage="{{ diaryTab }}" />
+    </TabContentItem>
+
+    <TabContentItem>
+        <Frame id="calendarPage" defaultPage="{{ calendarTab }}" />
+    </TabContentItem>
+    <TabContentItem>
+        <Frame id="learnPage" defaultPage="{{ learnTab }}" />
+    </TabContentItem>
+
+    <TabContentItem>
+        <Frame id="remindersPage" defaultPage="{{ remindersTab }}" />
+    </TabContentItem>
+</BottomNavigation>

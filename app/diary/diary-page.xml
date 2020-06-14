@@ -1,0 +1,54 @@
+<Page navigatingTo="onNavigatingTo"  xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:datetime="nativescript-datetimepicker" xmlns:lv="nativescript-ui-listview">
+
+    <ActionBar>
+        <Label text="Diary"></Label>
+    </ActionBar>
+
+    <GridLayout class="page_container" columns="*" rows="auto, auto, *, auto">
+    
+        <GridLayout class="datePicker" col="0" row="0" columns="auto, auto, auto, auto" rows="*"> 
+
+            <Button class="btn-grey" col="0" row="0" text="PREV" tap="goPrevDate"/>
+
+            <datetime:DatePickerField class="dateInput" col="1" row="0" date="{{ currentlySelectedDate }}" pickerDefaultDate="{{ currentlySelectedDate }}" 
+            minDate="{{ calendarMinDate }}" maxDate="{{ calendarMaxDate }}" locale="en_US" datePickerClosed="onDatePickerClosed"/>
+            <datetime:TimePickerField class="timeInput" col="2" row="0" time="{{ currentlySelectedTime }}" timeFormat="HH:mm" autoPickTime="true" />   
+
+            <Button class="btn-grey" col="3" row="0" text="NEXT" tap="goNextDate" visibility="{{ currentDayChosen ? 'hidden' : 'visible' }}" />
+        </GridLayout>
+
+        <GridLayout class="quota" col="0" row="1" columns="*" rows="*, *, *"> 
+            <GridLayout col="0" row="0" columns="auto, auto" rows="*"> 
+                <Label class="heading-text" col="0" row="0" text="Remaining Quota: "> </Label>
+                <Label class="heading-text" col="1" row="0" text="{{ dailyMaximum - dailyCurrent + ' ME' }} "> </Label>
+            </GridLayout> 
+        
+            <GridLayout col="0" row="1" columns="{{ progressColumns }} " class="progressBar">
+                <StackLayout col="0" class="progressBarValue" backgroundColor="{{ progressBackgroundColor }}"></StackLayout>
+            </GridLayout>
+
+            <Label class="warning-message" col="0" row="2" text="{{ warningMessage }}" > </Label> 
+        </GridLayout>
+
+        <GridLayout class="recentlyTaken" col="0" row="2" columns="*" rows="auto, *"> 
+    
+            <Label class="heading-text recentText" col="0" row="0" text="Recently Taken"> </Label> 
+    
+            <ListView class="recentlyTakenList" col="0" row="1" items="{{ recentlyTaken }}">
+                <ListView.itemTemplate> 
+                    <StackLayout >
+                        <Label class="recentlyTakenItem" text="{{ dose + ' pills - ' + pill.drug.drugName + ' ' + pill.strength + pill.strengthUnit }}"></Label>
+                        <Label class="recentlyTakenDate" text="{{ formattedTime }}"> </Label> 
+                    </StackLayout> 
+                </ListView.itemTemplate> 
+            </ListView> 
+            
+        </GridLayout>
+         
+        <GridLayout class="addNew" col="0" row="3" columns="*" rows="*">
+            <Button class="btn-blue" col="0" row="0" text="+ Add New" tap="toAvailableDrugs"> </Button>
+        </GridLayout> 
+            
+    </GridLayout>
+
+</Page>

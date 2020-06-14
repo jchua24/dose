@@ -1,0 +1,61 @@
+<Page navigatingTo="onNavigatingTo"  xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:datetime="nativescript-datetimepicker"
+xmlns:lv="nativescript-ui-listview">
+
+    <ActionBar>
+        <Label text="Diary"></Label>
+    </ActionBar>
+
+    <GridLayout class="page_container" columns="*" rows="*, auto, *, *">
+         
+         
+        <GridLayout col="0" row="0" columns="*" rows="auto, *"> 
+           <Label col="0" row="0" class="heading-text" text="Strength"></Label> 
+
+            <lv:RadListView id="strengthList" col="0" row="1" items="{{ drugStrengthOptions }}"> 
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" spanCount="3"/>
+                </lv:RadListView.listViewLayout>
+            
+                <lv:RadListView.itemTemplate >
+                    <Button id="{{'strength' + id}}" class="btn-black strength-button" value="{{strength}}" type="{{ unit }}" pillId="{{ pillId }}" text="{{ strength + unit }}"  tap="strengthChosen"> </Button> 
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+        </GridLayout>
+
+        <GridLayout class="dose" col="0" row="1" columns="*" rows="auto, *"> 
+            <Label class="heading-text" text="Dose"></Label> 
+            <GridLayout col="0" row="1" columns="*, *, *" rows="*, *, *"> 
+                <Button id="dose1" class="btn-black dose-button" col="0" row="0" text="1" val="1" tap="doseChosen"></Button>
+                <Button id="dose2" class="btn-black dose-button" col="1" row="0" text="2" val="2" tap="doseChosen"></Button>
+                <Button id="dose3" class="btn-black dose-button" col="2" row="0" text="3" val="3" tap="doseChosen"></Button>
+                <Button id="dose4" class="btn-black dose-button" col="0" row="1" text="4" val="4" tap="doseChosen"></Button>
+                <Button id="dose5" class="btn-black dose-button" col="1" row="1" text="5" val="5" tap="doseChosen"></Button>
+                <Button id="dose6" class="btn-black dose-button" col="2" row="1" text="6" val="6" tap="doseChosen"></Button>
+                <Button id="dose7" class="btn-black dose-button" col="0" row="2" text="7" val="7" tap="doseChosen"></Button>
+                <Button id="dose8" class="btn-black dose-button" col="1" row="2" text="8" val="8" tap="doseChosen"></Button>
+                <Button id="doseOther" class="btn-black dose-button" col="2" row="2" text="Other" val="Other" tap="doseTextInput"></Button>
+            </GridLayout>
+        </GridLayout>
+
+
+        <GridLayout class="quota" col="0" row="2" columns="*" rows="auto, auto, auto"> 
+            <GridLayout col="0" row="0" columns="auto, auto" rows="*"> 
+                <Label class="heading-text " col="0" row="0" text="Remaining Quota: "> </Label>
+                <Label class="heading-text " col="1" row="0" text="{{ dailyMaximum - (dailyCurrent + morphineEquivalent) + ' ME' }} "> </Label>
+            </GridLayout> 
+
+            <GridLayout col="0" row="1" columns="{{ progressColumns }} " class="progressBar">
+                <StackLayout col="0" backgroundColor="{{ progressBackgroundColor }}"></StackLayout>
+            </GridLayout>
+
+            <Label class="warning-message" col="0" row="2" text="{{ warningMessage }}" > </Label> 
+          
+        </GridLayout> 
+         
+        <GridLayout class="record-button" col="0" row="3" columns="*" rows="*">
+            <Button class= "{{ readyToRecord ? 'btn-green' : 'btn-blue' }}" col="0" row="0" text="Record" tap="recordMedication"> </Button>
+        </GridLayout> 
+
+    </GridLayout>
+
+</Page>

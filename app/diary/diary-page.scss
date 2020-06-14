@@ -1,0 +1,109 @@
+
+.bg1 {
+    background-color:  green;
+}
+
+
+.bg2 {
+    background-color:  blue;
+}
+
+
+.bg3 {
+    background-color:  red;
+    
+}
+
+.bg4 {
+    background-color:  yellow;
+}
+
+.dateInput {
+    background-image: none;
+    text-align: center;
+    padding: 0;
+    margin-left: 10; 
+    margin-right: 4;
+    color: #2BBB9C; 
+
+    border-color: transparent; 
+
+    font-size: 20; 
+    font-weight: bold; 
+}
+
+.timeInput {
+    background-image: none;
+    text-align: center;
+    padding: 0; 
+ 
+    margin-left: 4; 
+    margin-right: 10; 
+    color: #2BBB9C; 
+
+    border-color: transparent; 
+
+
+    font-size: 20; 
+    font-weight: bold; 
+}
+
+.progressBar {
+    height: 50;
+    margin: 10;
+    border-radius: 10;
+    border-color: black;
+    border-width: 1;
+}
+
+.headingText {
+    font-size: 20em; 
+    font-weight: bold;
+    color: #47525E; 
+} 
+
+.datePicker{
+    horizontal-align: center;
+} 
+
+.quota {
+    margin-top: 20; 
+}
+
+.recentlyTaken {
+    margin-top: 10; 
+}
+
+
+.recentText {
+    margin-bottom: 10; 
+}
+
+.recentlyTakenItem {
+    text-align: center; 
+    text-transform: uppercase;
+    font-size: 17; 
+    padding-top: 3; 
+    padding-bottom: 1; 
+    text-wrap: true; 
+    width: 100%; 
+}
+
+.recentlyTakenDate {
+    text-align: center; 
+    text-transform: uppercase;
+    font-size: 14;
+
+    padding-top: 1; 
+    padding-bottom: 3; 
+    text-wrap: true; 
+    width: 100%; 
+}
+
+.recentlyTakenList {
+    separator-color: transparent; 
+}
+
+.addNew {
+    margin-top: 10; 
+}
